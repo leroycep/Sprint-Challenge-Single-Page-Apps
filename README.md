@@ -39,10 +39,10 @@ following free-form questions. Edit this document to include your answers after
 each question.
 
 - [x] Explain benefit(s) using `client-side routing`?
- 
-    - Client side routing allows you to download the code for your application
-      once, and then switch between pages client side. This reduces the number of network
-      requests and can make switching between pages faster.
+
+  - Client side routing allows you to download the code for your application
+    once, and then switch between pages client side. This reduces the number of
+    network requests and can make switching between pages faster.
 
 ## Project Set Up
 
@@ -86,13 +86,13 @@ to make sure you aren't making too many requests.
 
 _Display Data from a Server API_
 
-- [ ] Fetch a list of characters from the Rick and Morty API's Characters
+- [x] Fetch a list of characters from the Rick and Morty API's Characters
       endpoint
       *`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`* and
       render them to the screen. _NOTE: https://cors-anywhere.herokuapp.com/ in
       front of the actual URL just let's us get around CORS errors that happen
       on the server._
-- [ ] You must display at least one element for each character.
+- [x] You must display at least one element for each character.
 
 _Add a Router to this application using
 [React Router](https://reacttraining.com/react-router/web/guides/quick-start)._
