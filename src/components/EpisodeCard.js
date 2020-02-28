@@ -5,13 +5,13 @@ const Card = styled.div`
   width: 30%;
 `;
 
-export default function LocationCard({ location }) {
+export default function EpisodeCard({ episode }) {
   return (
     <Card>
-      <h2>{location.name}</h2>
+      <h2>{episode.name}</h2>
       <ul>
-        <li>Type: {location.type}</li>
-        <li>Dimension: {location.dimension}</li>
+        <li>{episode.episode}</li>
+        <li>Air Date: {episode.air_date}</li>
       </ul>
     </Card>
   );

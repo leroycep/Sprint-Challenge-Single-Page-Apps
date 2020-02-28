@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import LocationCard from "./LocationCard";
+import EpisodeCard from "./EpisodeCard";
 import SearchForm from "./SearchForm";
 import styled from "styled-components";
 
-const LOCATIONS_API =
-  "https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/location/";
+const EPISODE_API = "https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/episode/";
 
 const Container = styled.section`
   display: flex;
@@ -13,38 +12,38 @@ const Container = styled.section`
   justify-content: space-evenly;
 `;
 
-export default function LocationsList() {
+export default function EpisodeList() {
   const [search, setSearch] = useState("");
-  const [locations, setLocations] = useState([]);
-  const [filteredLocations, setFilteredLocations] = useState([]);
+  const [episodes, setEpisodes] = useState([]);
+  const [filteredEpisodes, setFilteredEpisodes] = useState([]);
 
   useEffect(() => {
     axios
-      .get(LOCATIONS_API)
+      .get(EPISODE_API)
       .then(res => {
-        setLocations(res.data.results);
+        setEpisodes(res.data.results);
       })
-      .catch(err => console.log("Could not get characters", err));
+      .catch(err => console.log("Could not get episodes", err));
   }, []);
 
   useEffect(() => {
     if (search !== "") {
-      setFilteredLocations(
-        locations.filter(l =>
+      setFilteredEpisodes(
+        episodes.filter(l =>
           l.name.toLowerCase().includes(search.toLowerCase())
         )
       );
     } else {
-      setFilteredLocations(locations);
+      setFilteredEpisodes(episodes);
     }
-  }, [search, locations]);
+  }, [search, episodes]);
 
   return (
     <>
       <SearchForm search={search} setSearch={setSearch} />
       <Container>
-        {filteredLocations.map((l, idx) => (
-          <LocationCard key={idx} location={l} />
+        {filteredEpisodes.map((episode, idx) => (
+          <EpisodeCard key={idx} episode={episode} />
         ))}
       </Container>
     </>
