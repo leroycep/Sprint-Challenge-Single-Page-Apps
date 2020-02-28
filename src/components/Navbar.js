@@ -21,6 +21,7 @@ export default function Navbar() {
       <StyledNavLink exact to="/">Home</StyledNavLink>
       <StyledNavLink to="/characters">Characters</StyledNavLink>
       <StyledNavLink to="/locations">Locations</StyledNavLink>
+      <StyledNavLink to="/episodes">Episodes</StyledNavLink>
     </Nav>
   );
 }

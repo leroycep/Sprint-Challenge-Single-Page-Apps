@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { Route, Switch } from "react-router-dom";
 import CharacterList from "./components/CharacterList";
 import LocationsList from "./components/LocationsList";
+import EpisodeList from "./components/EpisodeList";
 import WelcomePage from "./components/WelcomePage";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <Switch>
         <Route path="/characters" component={CharacterList} />
         <Route path="/locations" component={LocationsList} />
+        <Route path="/episodes" component={EpisodeList} />
         <Route path="/" component={WelcomePage} />
       </Switch>
     </main>
