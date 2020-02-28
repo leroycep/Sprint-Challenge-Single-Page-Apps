@@ -21,12 +21,15 @@ export default function SearchForm(props) {
   return (
     <section className="search-form">
       <form onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="search"
-          value={searchBoxText}
-          onChange={changeHandler}
-        />
+        <label>
+          Query:{" "}
+          <input
+            type="text"
+            name="search"
+            value={searchBoxText}
+            onChange={changeHandler}
+          />
+        </label>
         <button>Search</button>
       </form>
     </section>
