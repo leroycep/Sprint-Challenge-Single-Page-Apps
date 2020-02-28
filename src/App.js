@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header.js";
+import Navbar from "./components/Navbar";
 import { Route, Switch } from "react-router-dom";
 import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage";
@@ -8,6 +9,7 @@ export default function App() {
   return (
     <main>
       <Header />
+      <Navbar />
       <Switch>
         <Route path="/characters" component={CharacterList} />
         <Route path="/" component={WelcomePage} />
