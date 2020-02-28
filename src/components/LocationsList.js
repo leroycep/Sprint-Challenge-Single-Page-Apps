@@ -5,7 +5,7 @@ import SearchForm from "./SearchForm";
 import styled from "styled-components";
 
 const LOCATIONS_API =
-  "https://rickandmortyapi.com/api/location/";
+  "https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/location/";
 
 const Container = styled.section`
   display: flex;
