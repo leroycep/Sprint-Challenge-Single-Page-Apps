@@ -20,6 +20,7 @@ export default function Navbar() {
     <Nav>
       <StyledNavLink exact to="/">Home</StyledNavLink>
       <StyledNavLink to="/characters">Characters</StyledNavLink>
+      <StyledNavLink to="/locations">Locations</StyledNavLink>
     </Nav>
   );
 }
