@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
+import SearchForm from "./SearchForm";
 import styled from "styled-components";
 
 const CHARACTER_API =
@@ -14,7 +15,9 @@ const Container = styled.section`
 
 export default function CharacterList() {
   const [_info, setInfo] = useState({});
+  const [search, setSearch] = useState("");
   const [characters, setCharacters] = useState([]);
+  const [filteredCharacters, setFilteredCharacters] = useState([]);
 
   useEffect(() => {
     axios
@@ -26,11 +29,26 @@ export default function CharacterList() {
       .catch(err => console.log("Could not get characters", err));
   }, []);
 
+  useEffect(() => {
+    if (search !== "") {
+      setFilteredCharacters(
+        characters.filter(c =>
+          c.name.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    } else {
+      setFilteredCharacters(characters);
+    }
+  }, [search, characters]);
+
   return (
-    <Container className="character-list">
-      {characters.map((c, idx) => (
-        <CharacterCard key={idx} character={c} />
-      ))}
-    </Container>
+    <>
+      <SearchForm search={search} setSearch={setSearch} />
+      <Container className="character-list">
+        {filteredCharacters.map((c, idx) => (
+          <CharacterCard key={idx} character={c} />
+        ))}
+      </Container>
+    </>
   );
 }
